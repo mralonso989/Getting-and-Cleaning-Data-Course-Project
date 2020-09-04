@@ -1,4 +1,4 @@
-# ALONSO ANTÓN
+# ALONSO ANTÃ“N
 # I've already had the unzip files in my directory
 path <- "C:/Users/Julia/Desktop/2020-2/Coursera/DATA SCIENCE/Curso 3"
 library(data.table)
@@ -21,7 +21,7 @@ measu <- gsub('[()]', '', measu)
 
 test <- fread(file.path(path, "UCI HAR Dataset/test/X_test.txt"))[, features_index, with = FALSE] ; data.table::setnames(test, colnames(test), measu)
 train_y <- fread(file.path(path, "UCI HAR Dataset/test/Y_test.txt")
-                        , col.names = c("Activity"))
+                        , col.names = c("Activity")) # Here, I call 'train_y' instead of 'test_y' (I forgot to change it), but it doesn't matter if you run the code one by one.
 test_sub <- fread(file.path(path, "UCI HAR Dataset/test/subject_test.txt")
                       , col.names = c("SubjectNum"))
 test_data <- cbind(test_sub, train_y, test)
